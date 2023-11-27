@@ -1,7 +1,7 @@
 # Soobp9-saltlux_sessac_1
 
 ## - readme.md 꼼꼼히 작성하기!!!!!
-## - sequence diagram 그리기
+## - sequence diagram 그리기 <br>
 
 # 본 서비스
 ## 1. 사용자 주관적 증상 입력 후 예상 질환, 진료과 추천

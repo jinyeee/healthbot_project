@@ -1,0 +1,7 @@
+fastapi
+openai
+dotenv
+jinja2
+pymongo
+"pymongo[srv]"==3.11
+dnspython

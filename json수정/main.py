@@ -49,7 +49,7 @@ class BotResponse(BaseModel):
 response_queue = []
 
 # Template directory setup
-templates = Jinja2Templates(directory="templates")
+templates = Jinja2Templates(directory="../front")
 
 # Maximum number of previous exchanges to keep
 MAX_HISTORY_LENGTH = 7
@@ -64,7 +64,7 @@ def trim_conversation_history():
 # Root endpoint for rendering HTML
 @app.get("/", response_class=HTMLResponse)
 async def read_root(request: Request):
-    return templates.TemplateResponse("chatbot.html", {"request": request})
+    return templates.TemplateResponse("html/chatbot.html", {"request": request})
 
 # Chatbot endpoint
 @app.post('/chatbot/', response_model=BotResponse)

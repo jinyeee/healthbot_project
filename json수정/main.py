@@ -23,6 +23,7 @@ client = OpenAI(api_key=API_KEY)
 
 # FastAPI app setup
 app = FastAPI()
+# app = FastAPI(debug=True)
 
 # CORS setup
 app.add_middleware(
@@ -49,7 +50,7 @@ class BotResponse(BaseModel):
 response_queue = []
 
 # Template directory setup
-templates = Jinja2Templates(directory="front")
+templates = Jinja2Templates(directory="/Users/haylee/Desktop/Desktop/Saltlux/code/front/html")
 
 # Maximum number of previous exchanges to keep
 MAX_HISTORY_LENGTH = 7

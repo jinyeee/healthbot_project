@@ -81,11 +81,6 @@ window.onload = function () {
     
 }
 
-const hospitalResult = JSON.parse(storedData); //가져온 데이터를 javaScript객체로 변환
-document.querySelector('#tbody').innerHTML = '';
-
-
-
 
 // $.each(hospitalResult, function(i) {
 //     console.log(i);
@@ -168,17 +163,53 @@ function hospitalInfo(hospitalId) {
                 mapContainer.innerHTML = '';
 
                 // 새로운 지도를 그림
-                var map = new kakao.maps.Map(mapContainer, {
+                var map = new kakao.maps.Map(mapContainer, 
+                mapOption = {
                     center: new kakao.maps.LatLng(latitude, longitude),
                     level: 4
                 });
 
+                var map = new kakao.maps.Map(mapContainer, mapOption);
+
+                var imageSrc = "/images/hospital.png"
+                    imageSize = new kakao.maps.Size(64, 69),
+                    imageOption = {offset: new kakao.maps.Point(27, 69)};
+
+                var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imageOption);
+                    markerPosition = new kakao.maps.LatLng(latitude, longitude);
+
                 // 마커를 생성하고 지도에 표시
                 var markerPosition = new kakao.maps.LatLng(latitude, longitude);
                 var marker = new kakao.maps.Marker({
-                    position: markerPosition
+                    position: markerPosition,
+                    image: markerImage
                 });
+                
+                // 마커가 지도 위에 표시되도록 설정
                 marker.setMap(map);
+
+                var content = '<div class="customoverlay">' +
+                '   <a href="https://map.kakao.com/?q=' + encodeURIComponent(result.hospitalName) + '&target=place" target="_blank">' +
+                    `   <span class="title">${result.hospitalName}</span>` +
+                    '   </a>' +
+                    '</div>';
+
+                var position = new kakao.maps.LatLng(latitude, longitude);
+
+                // 커스텀 오버레이를 생성합니다
+                var customOverlay = new kakao.maps.CustomOverlay({
+                    map: map,
+                    position: position,
+                    content: content,
+                    yAnchor: 1 
+                });
+
+                customOverlay.setMap(map);
+
+                kakao.maps.event.addListener(customOverlay, 'click', function() {
+                    map.panTo(position);
+                });
+                
             }
 
         },

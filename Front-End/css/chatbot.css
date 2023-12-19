@@ -1,0 +1,454 @@
+@import url("https://fonts.googleapis.com/css?family=Lato:400,700");
+
+html {
+    display: grid;
+    min-height: 100%;
+}
+  
+.messages {
+    position: relative;
+    background: #f9fbff;
+    opacity: 0.8;
+    width: 60%;
+    height: 60%;
+    top: 2.5%;
+    left: -60%;
+    border-radius: 10px 0 0 10px;
+    box-shadow: -5px 5px 10px rgba(119, 119, 119, 0.5);
+    display: flex;
+    justify-content: center;
+}
+
+body {
+    display: grid;
+    background: linear-gradient(to bottom left, #79c7c5 40%, #f9fbff 100%);
+    font-family: "Lato", sans-serif;
+    
+}
+
+.container {
+    position: relative;
+    margin: 8cqmax auto;
+    width: 620px;
+    height: 450px;
+}
+
+
+.chatbox {
+    position: absolute;
+    width: 600px;
+    height: 800px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px rgba(119, 119, 119, 0.5);
+}
+
+.top-bar {
+    width: 100%;
+    height: 60px;
+    background: #f9fbff;
+    border-radius: 10px 10px 0 0;
+}
+
+.avatar {
+    width: 35px;
+    height: 35px;
+    background: linear-gradient(to bottom left, #79c7c5 20%, #a1e2d9 100%);
+    border-radius: 50%;
+    position: absolute;
+    top: 11px;
+    left: 15px;
+}
+
+.userId{
+    margin-top: 20px;
+    text-align: center;
+}
+.sideBar {
+    position: absolute;
+    margin-top: 40px;
+}
+
+.userLocation{ 
+    margin-top: 20px;
+}
+
+.btn{
+    margin-top: 20px;
+}
+
+.userInfo{
+    display: flex;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    background: linear-gradient(to bottom left, #79c7c5 20%, #a1e2d9 100%);
+    border-radius: 50%;
+    margin: auto;
+}
+#user{
+    margin-top: 13px;
+    text-align: center;
+}
+.userLocation {
+    text-align: center;
+}
+.avatar p {
+    color: #f9fbff;
+    margin: 7px 12px;
+}
+.userInfo p{
+    color: #f9fbff;
+    margin: 7px 12px;
+}
+
+.name {
+    position: absolute;
+    top: 22px;
+    text-transform: uppercase;
+    color: #777777;
+    font-size: 0.8em;
+    letter-spacing: 2px;
+    font-weight: 500;
+    left: 60px;
+}
+
+.menu {
+    position: absolute;
+    right: 10px;
+    top: 20px;
+    width: 10px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.menu:hover {
+    transform: scale(1.1);
+    transition: all 0.3s ease-in;
+}
+
+.icons {
+    position: absolute;
+    color: #a1e2d9;
+    padding: 10px;
+    top: 5px;
+    right: 21px;
+    cursor: pointer;
+}
+
+.icons .fas {
+    padding: 5px;
+    opacity: 0.8;
+}
+
+.icons .fas:hover {
+    transform: scale(1.1);
+    transition: all 0.3s ease-in;
+}
+
+.dots {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: #79c7c5;
+    box-shadow: 0px 7px 0px #79c7c5, 0px 14px 0px #79c7c5;
+}
+
+.middle {
+    position: absolute;
+    background: #f9fbff;
+    width: 600px;
+    height: 686px;
+    opacity: 0.85;
+    top: 60px;
+    overflow-y: scroll;
+}
+
+.incoming {
+    display: flex;
+    padding: 13px;
+    color: #333;
+    flex-direction: column;
+}
+
+.bot_incoming{
+    display: flex;
+}
+
+
+.hospitalBtn{
+
+    flex: 1 1 auto;
+    text-align: center;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+    text-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px; 
+    margin-left: 12%;
+    padding: 8px 20px;
+}
+
+.hospitalBtn:hover {
+    background-position: right center; /* change the direction of the change here */
+}
+
+.hospitalBtn-3 {
+background-image: linear-gradient(to right, #84fab0 0%, #8fd3f4 51%, #84fab0 100%);
+}
+
+.hospitalBtn-4 {
+background-image: linear-gradient(to right, #a1c4fd 0%, #c2e9fb 51%, #a1c4fd 100%);
+}
+.incoming .bubble {
+    background: #b2b2b2;
+}
+
+.outgoing {
+    display: flex;
+    flex-direction: row-reverse;
+    padding: 10px;
+    color: #333;
+    /* 상대의 메시지 텍스트 색상 */
+}
+
+
+.outgoing .bubble {
+    background: #79c7c5;
+}
+
+.typing {
+    position: absolute;
+    top: 67%;
+    left: 20px;
+}
+
+.typing .bubble {
+    background: #eaeaea;
+    padding: 8px 13px 9px 13px;
+}
+
+.ellipsis {
+    width: 5px;
+    height: 5px;
+    display: inline-block;
+    background: #b7b7b7;
+    border-radius: 50%;
+    animation: bounce 1.3s linear infinite;
+}
+.myPageBtn, .hospitalListBtn{
+    width: 130px;
+    height: 40px;
+    color: #fff;
+    border-radius: 5px;
+    padding: 10px 25px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 500;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+     box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+     7px 7px 20px 0px rgba(0,0,0,.1),
+     4px 4px 5px 0px rgba(0,0,0,.1);
+    outline: none;
+}
+
+.btn-4 {
+    background-color: #4dccc6;
+  background-image: linear-gradient(315deg, #4dccc6 0%, #96e4df 74%);
+    line-height: 42px;
+    padding: 0;
+    border: none;
+  }
+  .btn-4:hover{
+    background-color: #89d8d3;
+  background-image: linear-gradient(315deg, #89d8d3 0%, #03c8a8 74%);
+  }
+  .btn-4 span {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  .btn-4:before,
+  .btn-4:after {
+    position: absolute;
+    content: "";
+    right: 0;
+    top: 0;
+     box-shadow:  4px 4px 6px 0 rgba(255,255,255,.9),
+                -4px -4px 6px 0 rgba(116, 125, 136, .2), 
+      inset -4px -4px 6px 0 rgba(255,255,255,.9),
+      inset 4px 4px 6px 0 rgba(116, 125, 136, .3);
+    transition: all 0.3s ease;
+  }
+  .btn-4:before {
+    height: 0%;
+    width: .1px;
+  }
+  .btn-4:after {
+    width: 0%;
+    height: .1px;
+  }
+  .btn-4:hover:before {
+    height: 100%;
+  }
+  .btn-4:hover:after {
+    width: 100%;
+  }
+  .btn-4 span:before,
+  .btn-4 span:after {
+    position: absolute;
+    content: "";
+    left: 0;
+    bottom: 0;
+    box-shadow:  4px 4px 6px 0 rgba(255,255,255,.9),
+                -4px -4px 6px 0 rgba(116, 125, 136, .2), 
+      inset -4px -4px 6px 0 rgba(255,255,255,.9),
+      inset 4px 4px 6px 0 rgba(116, 125, 136, .3);
+    transition: all 0.3s ease;
+  }
+  .btn-4 span:before {
+    width: .1px;
+    height: 0%;
+  }
+  .btn-4 span:after {
+    width: 0%;
+    height: .1px;
+  }
+  .btn-4 span:hover:before {
+    height: 100%;
+  }
+  .btn-4 span:hover:after {
+    width: 100%;
+  }
+  
+.one {
+    animation-delay: 0.6s;
+}
+
+.two {
+    animation-delay: 0.5s;
+}
+
+.three {
+    animation-delay: 0.8s;
+}
+
+.bubble {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 5px;
+    color: #f9fbff;
+    font-size: 1.1rem;
+    padding: 10px 10px 10px 12px;
+    border-radius: 20px;
+}
+
+.lower {
+    margin-top: 45px;
+}
+
+
+.bottom-bar {
+    position: absolute;
+    width: 100%;
+    height: 54px;
+    bottom: 0;
+    background: #f9fbff;
+    border-radius: 0 0 10px 10px;
+}
+
+.left {
+    left: 0px;
+}
+
+input {
+    padding: 7px;
+    width: 74%;
+    left: 5%;
+    position: absolute;
+    border: 0;
+    top: 13px;
+    background: #f9fbff;
+    color: #79c7c5;
+}
+
+input::placeholder {
+    color: #a1e2d9;
+}
+
+input:focus {
+    color: #777777;
+    outline: 0;
+}
+
+.sendBtn {
+    position: absolute;
+    border: 0;
+    font-size: 1em;
+    /* color: #a1e2d9; */
+    top: 19px;
+    opacity: 0.8;
+    right: 17px;
+    cursor: pointer;
+    outline: 0;
+}
+
+.sendBtn:hover {
+    transform: scale(1.1);
+    transition: all 0.3s ease-in-out;
+    color: #79c7c5;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    text-align: center;
+    font-size: 0.7em;
+    padding: 10px;
+}
+
+footer p {
+    color: #79c7c5;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+footer a {
+    color: #f9fbff;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #a1e2d9;
+}
+
+@keyframes bounce {
+    30% {
+        transform: translateY(-2px);
+    }
+
+    60% {
+        transform: translateY(0px);
+    }
+
+    80% {
+        transform: translateY(2px);
+    }
+
+    100% {
+        transform: translateY(0px);
+        opacity: 0.5;
+    }
+}
+
+
+  
+  /* Demo Stuff End -> */
+  
+  /* <- Magic Stuff Start */
+  

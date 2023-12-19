@@ -8,7 +8,7 @@ spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     hikari:
-      username: "healthcube"
-      password: "healthcube1234"
-    url: "jdbc:mysql://healthcube-db.cfowoy8mubey.us-west-1.rds.amazonaws.com:3306/healthcube?serverTimezone=UTC&characterEncoding=UTF-8"
+      username: ${USERNAME}
+      password: ${PASSWORD}
+    url: ${DB_URL}
 

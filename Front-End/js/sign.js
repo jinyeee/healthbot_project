@@ -93,7 +93,7 @@ joinBtn.addEventListener('click', (event) => {
         success: function (result) {
             if(result == 'success'){
                 console.log(result)
-                alert('회원가입 성공')
+                alert('회원가입이 완료되었습니다.')
                 // console.log(result)
                 location.href = '/html/sign.html'
             }

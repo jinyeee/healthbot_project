@@ -16,7 +16,6 @@ import lombok.extern.slf4j.Slf4j;
 @Getter
 @Slf4j
 public class User {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long userSequence;
@@ -24,11 +23,6 @@ public class User {
     private String userPw;
     private Integer userAge;
     private String userGender;
-
-//    @ColumnDefault("`users`")
-//    private String role;
-
-    //가입날짜, 생일, ... 추가 필요!
 
     @Builder
     public User(String userId, String userPw

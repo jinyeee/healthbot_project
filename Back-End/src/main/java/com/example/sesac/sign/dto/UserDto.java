@@ -13,12 +13,6 @@ public class UserDto {
     private Integer userAge;
     private String userGender;
 
-//    private String userName;
-//    private String userEmail;
-//    private String userAddr;
-//    private String userTell;
-
-
     @Builder
     public UserDto(Long userSequence, String userId, String userPw
             , Integer userAge, String userGender) {
@@ -28,6 +22,5 @@ public class UserDto {
         this.userGender = userGender;
         this.userAge = userAge;
     }
-
 
 }

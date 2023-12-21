@@ -29,7 +29,6 @@ public class HospitalCustomRepositoryImpl implements HospitalCustomRepository {
                 .leftJoin(hospitalDepartment).on(hospital.hospitalId.eq(hospitalDepartment.hospital.hospitalId))
                 .leftJoin(reviewSum).on(hospital.hospitalId.eq(reviewSum.hospital.hospitalId))
                 .where(whereCondition(hospitalDepReq))
-//                .where(hospitalDepartment.hospitalMiddle.eq(hospitalDepReq.getDepartment()).and(hospital.hospitalAddress.like("%" + hospitalDepReq.getLocation() + "%")))
                 .orderBy(reviewSum.reviewTotalCnt.desc())
                 .fetch();
     }

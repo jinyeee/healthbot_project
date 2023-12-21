@@ -29,19 +29,14 @@ public class SignController {
         log.info("회원가입");
         userService.createUser(userDto);
         return new ResponseEntity<>(SUCCESS, HttpStatus.OK);
-
     }
 
     //로그인
     @PostMapping("login")
     public ResponseEntity<LoginResp> login(@RequestBody LoginDto loginDto) {
         log.info("로그인");
-//        session = request.getSession();
-        //System.out.print(loginDto);
         UserDto user = userService.loginUser(loginDto);
         if (user != null && user.getUserPw().equals(loginDto.getUserPw())) {
-            //로그인 성공
-//            session.setAttribute("userSequence", user.getUserSequence());
             log.info("로그인 성공");
             return new ResponseEntity<>(new LoginResp(SUCCESS, user.getUserSequence(), user.getUserId()), HttpStatus.OK);
         } else {
@@ -51,24 +46,6 @@ public class SignController {
 
     }
 
-
-    //로그인
-//    @PostMapping("/login")
-//    public ResponseEntity<Long> login(@RequestBody LoginDto loginDto, HttpSession session) {
-////        session = request.getSession();
-//        UserDto user = userService.loginUser(loginDto);
-//        if (user != null && user.getUserPw().equals(loginDto.getUserPw())) {
-//            //로그인 성공
-//            session.setAttribute("userSequence", user.getUserSequence());
-//            Object sequenceTest = session.getAttribute("userSequence");
-//            Long userSequence = (Long) sequenceTest;
-//            System.out.print(userSequence);
-//            return new ResponseEntity<>(userSequence, HttpStatus.OK);
-//        } else {
-//            return new ResponseEntity<>(0L, HttpStatus.OK);
-//        }
-//
-//    }
 
 
 }

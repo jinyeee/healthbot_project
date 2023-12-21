@@ -24,7 +24,6 @@ public class Hospital {
     private double hospitalLongitude;
     private double hospitalLatitude;
 
-
     @Builder
     public Hospital(String hospitalName, String hospitalAddress
             , String hospitalCode, String hospitalPost, String hospitalTell

@@ -23,20 +23,16 @@ import java.util.List;
 public class HospitalController {
     private final HospitalService hospitalService;
 
-    //     특정 병원 정보 조회
     @GetMapping("/{hospitalId}")
     public ResponseEntity<HospitalDto> getOneHospital(@PathVariable(name = "hospitalId") Long hospitalId) {
         return new ResponseEntity<>(hospitalService.getHospital(hospitalId), HttpStatus.OK);
     }
 
-    // 모든 병원 정보 조회
     @GetMapping
     public ResponseEntity<List<HospitalDto>> getAllHospitals() {
         return new ResponseEntity<>(hospitalService.getAll(), HttpStatus.OK);
     }
 
-
-    //     특정 진료과로 병원 정보 조회
     @GetMapping("/find")
     public ResponseEntity<List<HospitalReviewSumDto>> findAllByDepartment(@QueryStringArgResolver HospitalDepReq hospitalDepReq) {
         return new ResponseEntity<>(hospitalService.getHospitalList(hospitalDepReq), HttpStatus.OK);

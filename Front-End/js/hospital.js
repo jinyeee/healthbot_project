@@ -1,7 +1,3 @@
-// const dataDepartment = document.querySelector();
-// const dataLocation = document.querySelector();
-
-
 const urlParam = new URL(location).searchParams;
 const department = urlParam.get("department");
 const dong = urlParam.get("location");
@@ -20,21 +16,14 @@ window.onload = function () {
                 console.log("모든 병원")
                 console.log(result)
                 let str = '';
+
                 for (let hospital of result) {
-                    // var positive = (hospital.positivePercentage) * 100;
-                    //alert(positive);
-                    // console.log(hospital)
                     str += '<tr>';
-                    // str += `    <td>${hospital.hospitalId}</td>`;
                     str += `    <td><a onclick="hospitalInfo('${hospital.hospitalId}')">${hospital.hospitalName}</a></td>`;
-                    // str += `    <td><a onclick="test('${review.hospitalId}')" data-bs-toggle="modal" data-bs-target="#exampleModal">${review.hospitalName}</a></td>`;
                     str += `    <td>${hospital.positivePercentage}%</td>`;
                     str += `    <td>${hospital.negativePercentage}%</td>`;
                     str += `    <td>${hospital.reviewTotalCnt}</td>`;
-    
                     str += '</tr>';
-                    str += '</tr>';
-    
                 }
     
                 document.querySelector('#tbody').innerHTML = str;
@@ -51,23 +40,15 @@ window.onload = function () {
             dataType: 'json',
             contentType: 'application/json',
             success: function (result) {
-                // console.log(result)
                 let str = '';
+
                 for (let hospital of result) {
-                    // var positive = (hospital.positivePercentage) * 100;
-                    //alert(positive);
-                    // console.log(hospital)
                     str += '<tr>';
-                    // str += `    <td>${hospital.hospitalId}</td>`;
                     str += `    <td><a onclick="hospitalInfo('${hospital.hospitalId}')">${hospital.hospitalName}</a></td>`;
-                    // str += `    <td><a onclick="test('${review.hospitalId}')" data-bs-toggle="modal" data-bs-target="#exampleModal">${review.hospitalName}</a></td>`;
                     str += `    <td>${hospital.positivePercentage}%</td>`;
                     str += `    <td>${hospital.negativePercentage}%</td>`;
                     str += `    <td>${hospital.reviewTotalCnt}</td>`;
-    
                     str += '</tr>';
-                    str += '</tr>';
-    
                 }
     
                 document.querySelector('#tbody').innerHTML = str;
@@ -81,42 +62,15 @@ window.onload = function () {
     
 }
 
-
-// $.each(hospitalResult, function(i) {
-//     console.log(i);
-// })
-
-
-// $.each(hospitalResult, function(i) {
-//     console.log(i);
-// })
-
-
-// $.each(JSON.parse(myData), ...);
-
-
-
-
-
-//병원 이름 클릭 시 modal 실행
-//pk가지고 와서 ajax로 데이터 조회 후 조회한 결과 모달안에 그려주기 
 function hospitalInfo(hospitalId) {
-    // alert(hospitalId);
-
     $.ajax({
         type: 'GET',
         url: `http://localhost:8080/hospital/${hospitalId}`,
         dataType: 'json',
         contentType: 'application/json',
-        // data : {"hospitalId" : hospitalId}, //데이터 임시로 지정
         success: function (hospitalInfo) {
-            // console.log(hospitalInfo)
-            // result => hospitalInfo
-            //  모달 안에 데이터 그리고 모달 띄워주기
-
-
+          
             let str = '';
-
             str += '<div id="map" style="width:100%; height: 350px;"></div>';
             str += '<div>';
             str += '    <table class="table">';
@@ -134,15 +88,12 @@ function hospitalInfo(hospitalId) {
             str += `                <td>${hospitalInfo.hospitalPost}</td>`;
             str += '            <tr>';
 
-
             let str2 = '';
             str2 += `<h2>${hospitalInfo.hospitalName}</h2>`
-
 
             document.querySelector('.modal-body').innerHTML = str;
             document.querySelector('#exampleModalLabel').innerHTML = str2;
             $("#exampleModal").modal("show");
-
 
             $(document).ready(function () {
                 // 모달이 나타날 때 이벤트 감지

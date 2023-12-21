@@ -1,15 +1,11 @@
-
-
 window.onload = function(){
     const userSequence = JSON.parse(localStorage.getItem("userInfo")).userSeq;
     console.log(userSequence);
     $.ajax({
         type: 'GET',
         url: `http://localhost:8080/mypage/${userSequence}`,
-        dataType: 'json', // 서버에서 준 데이터 형식
-        // data: JSON.stringify(userSequence),
+        dataType: 'json', 
         contentType: 'application/json',
-        //data: {"":1},
         success: function (result) {
             console.log(result);
             document.querySelector('#userInfoCard').innerHTML = '';
@@ -28,10 +24,7 @@ window.onload = function(){
         
     });
 }
-
-
  
- // 페이지 로드 시 개인 정보 섹션을 표시
  document.addEventListener("DOMContentLoaded", function() {
     showInfo();
 });
@@ -50,7 +43,6 @@ function showInfo() {
                 str += `<p><strong>나이:</strong>${userInfo.userAge}</p>`;
 
     document.querySelector('#userInfoCard').innerHTML = str;            
-    // alert(userInfo.userName);
 }
 
 function showRecords() {

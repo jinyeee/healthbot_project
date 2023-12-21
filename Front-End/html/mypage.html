@@ -15,94 +15,50 @@
     <div class="wrap">
         <div class ="inner">
     <div>
-        <!-- <nav class="navbar navbar-expand-lg bg-light">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#" onclick="location.href='home.html'">Home</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-              <a class="nav-link active" aria-current="page" onclick="location.href='chatbot.html'">Chatbot</a>
-              <a class="nav-link" href="#" onclick="location.href='hospital.html'">hospital</a>
-              <a class="nav-link" href="#" onclick="location.href='mypage.html'">mypage</a>
-             
-            </div>
-          </div>
-        </div>
-      </nav> -->
     </div>
     <div>
         <header class="mb-0">
             <h1>MyPage</h1>
         </header>
+            <div class="container-fluid">
+                <div class="row">
+                    <nav class="col-md-3">
+                        <div class="card">
+                            <h5 class="card-header">메뉴</h5>
+                            <div class="card-body">
+                                <a class="nav-link" href="#" onclick="showInfo()">정보</a>
+                                <a class="nav-link" href="#" onclick="showRecords()">기록</a>
+                            </div>
+                        </div>
+                    </nav>
 
-        <div class="container-fluid">
-            <div class="row">
-                <nav class="col-md-3">
-                    <div class="card">
-                        <h5 class="card-header">메뉴</h5>
-                        <div class="card-body">
-                            <a class="nav-link" href="#" onclick="showInfo()">정보</a>
-                            <a class="nav-link" href="#" onclick="showRecords()">기록</a>
-                        </div>
-                    </div>
-                </nav>
+                    <article id="infoSection" style="width:40%;">
+                        <div class="card">
+                            <div class="section-header">
+                                <h2>개인 정보</h2>
+                            </div>
+                            <div class="card-body" id="userInfoCard">
 
-                <article id="infoSection" style="width:40%;">
-                    <div class="card">
-                        <div class="section-header">
-                            <h2>개인 정보</h2>
+                            </div>
                         </div>
-                        <div class="card-body" id="userInfoCard">
-                            <!-- <p><strong>이름:</strong> 문재원</p>
-                            <p><strong>아이디:</strong> 981004</p>
-                            <p><strong>성별:</strong> 남성</p>
-                            <p><strong>이메일:</strong> example@example.com</p> -->
+                    </article>
 
+                    <article id="recordsSection" style="width:70%; display:none;">
+                        <div class="card">
+                            <div class="section-header">
+                                <h2>기록</h2>
+                            </div>
+                            <div class="card-body">
+                                <p>대화 기록이 없습니다.</p>
+                            </div>
                         </div>
-                    </div>
-                </article>
-
-                <article id="recordsSection" style="width:70%; display:none;">
-                    <div class="card">
-                        <div class="section-header">
-                            <h2>기록</h2>
-                        </div>
-                        <div class="card-body">
-                            <p>대화 기록이 없습니다.</p>
-                        </div>
-                    </div>
-                </article>
+                    </article>
+                </div>
             </div>
-        </div>
 
     </div>
 </div>
 </div>
-
-
-
-    <!-- <script>
-        // 페이지 로드 시 개인 정보 섹션을 표시
-        document.addEventListener("DOMContentLoaded", function() {
-            showInfo();
-        });
-
-        function showInfo() {
-            document.getElementById('infoSection').style.display = 'block';
-            document.getElementById('recordsSection').style.display = 'none';
-        }
-
-        function showRecords() {
-            document.getElementById('infoSection').style.display = 'none';
-            document.getElementById('recordsSection').style.display = 'block';
-        }
-    </script> -->
-
-
-
-
     <!-- 부트스트랩 JS 및 Popper.js, jQuery 추가 -->
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>

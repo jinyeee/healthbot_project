@@ -31,7 +31,6 @@ function sendMessage() {
   var messageInput = document.getElementById('message-input');
   var chatBox = document.querySelector(".middle")
   if (messageInput.value.trim() !== '') {
-    // 나의 메시지
     chatBox.innerHTML += `<div class="outgoing">
                             <div class="texts">
                               <div class="bubble">${messageInput.value}</div>

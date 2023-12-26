@@ -196,7 +196,7 @@ def get_qa_by_gpt(prompt, temperature=0.3, top_p=0.5, max_tokens=600, frequency_
 
 
 # Function to extract department from the GPT response
-list_department = ["이비인후과", "내과", "치과", "내과", "이비인후과", "정형외과", "신경과", "치과", "한의과", "정신과", "외과", "산부인과", "소아청소년과", "비뇨의학과", "응급의학과", "성형외과", "피부과", "안과", "가정의학과"]
+list_department = ["이비인후과", "내과", "치과", "이비인후과", "정형외과", "신경과", "치과", "한의과", "정신과", "외과", "산부인과", "소아청소년과", "비뇨의학과", "응급의학과", "성형외과", "피부과", "안과", "가정의학과"]
 def extract_department_from_message(message):
     # Check if any medical department is mentioned in the bot's response
     for department in list_department:

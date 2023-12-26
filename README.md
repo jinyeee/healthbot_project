@@ -1,16 +1,34 @@
-# Soobp9-saltlux_sessac_1
+# 챗봇을 활용한 의료가이드 제공 서비스 HealthBot 개발 프로젝트
 
+## Soobp9-saltlux_sessac_
 ## - readme.md 꼼꼼히 작성하기!!!!!
 ## - sequence diagram 그리기 <br><br><br><br>
 
 # 본 서비스
-## 1. 사용자 주관적 증상 입력 후 예상 질환, 진료과 추천
-## 2. 현재 위치 기반하여 주변 병원 추천
-## 3. 병원 리뷰 분석 <br><br><br><br>
+## 1. 사용자 주관적 증상 입력 후 대화를 통해 챗봇이 예상 질환, 진료과 추천
+## 2. 현재 위치 기반하여 주변 병원 추천 (3. 서비스 비율 순)
+## 3. 병원 리뷰 분석(진료과 별 네이버 리뷰 감정 긍정 비율 순) <br><br><br><br>
 
 # 가능한 추가 서비스
+## - 동네 병원, 종합병원 진료과 나눠서 추천
 ## - 약 성분분석(이미지에서 텍스트 추출)
-## - 건강기능식품 추천 <br><br><br><br>
+## - 건강기능식품 추천
+## - 음성 대화 기능 <br><br><br><br>
+
+
+# 설치 및 시작
+## - 로컬환경에서만 실행 가능
+## - vscode에서 live server 확장 프로그램 다운로드
+## - 설치
+$pip install python-dotenv
+$pip install openai
+$pip install fastapi
+$pip install uvicorn
+$pip install jinja2
+$pip install pymongo
+## - main_db_1.py 실행
+$python -m uvicorn main:app --reload 
+## - chatbot.html 파일 열어놓은 상태에서 live server 실행 <br><br><br><br>
 
 # 20231123 목요일
 ## - 증상 데이터 완성 <br><br><br><br>
@@ -66,3 +84,11 @@
 
 # 20231218 월요일
 ## 코딩 테스트 - 전체 ㅋㅋㅋ
+## 파인콘, 몽고디비 고도화 계속
+## 프롬프트 발전
+
+# 20231219
+# 20231220
+
+# 20231221
+## 발표

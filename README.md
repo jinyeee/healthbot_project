@@ -20,14 +20,14 @@
 ## - 로컬환경에서만 실행 가능
 ## - vscode에서 live server 확장 프로그램 다운로드
 ## - 설치
-$pip install python-dotenv
-$pip install openai
-$pip install fastapi
-$pip install uvicorn
-$pip install jinja2
-$pip install pymongo
+$pip install python-dotenv <br>
+$pip install openai <br>
+$pip install fastapi <br>
+$pip install uvicorn <br>
+$pip install jinja2 <br>
+$pip install pymongo <br>
 ## - main_db_1.py 실행
-$python -m uvicorn main:app --reload 
+$python -m uvicorn main:app --reload <br>
 ## - chatbot.html 파일 열어놓은 상태에서 live server 실행 <br><br><br><br>
 
 # 20231123 목요일

@@ -5,7 +5,7 @@ from bson import ObjectId
 
 host = "localhost"
 port = "27017"
-client = MongoClient('mongodb+srv://baeeura94:healthcube@cluster0.avvlpgb.mongodb.net/')
+client = MongoClient('mongodb+srv://*********:*********@*********.*******.mongodb.net/')
 
 
 
@@ -31,7 +31,7 @@ def insert_item_many(data, db_name = None, collection_name = None):
 
 
 def fetch_conversation_from_db(conversation_id):
-    client = MongoClient('mongodb+srv://baeeura94:healthcube@cluster0.avvlpgb.mongodb.net/')
+    client = MongoClient('mongodb+srv://*********:*********@*********.*******.mongodb.net/')
     db = client["HealthCube"]
     collection = db["user_chat_logs"]
 
